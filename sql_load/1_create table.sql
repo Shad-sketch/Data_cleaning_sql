@@ -1,7 +1,5 @@
 -- creating our layoffs table 
 
-DROP TABLE layoffs;
-
 CREATE TABLE layoffs 
 (
     company	TEXT,
@@ -27,7 +25,8 @@ WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
 -- created another table named layoffs_staging, this was to make sure that if I removed the wrong column, 
 row or data I would still have the original data file
 
-DROP TABLE layoffs_staging;
 CREATE TABLE layoffs_staging AS 
 SELECT * FROM layoffs;
 
+CREATE TABLE layoffs_staging_2
+SELECT * FROM layoffs;
